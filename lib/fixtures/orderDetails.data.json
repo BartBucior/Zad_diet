@@ -1,0 +1,11 @@
+{
+  "id_1": {
+    "id": "1",
+    "datetime": "2022-03-12 12:43:37.000",
+    "from_date": "2022-03-14",
+    "to_date": "2022-03-20",
+    "dietId": 1,
+    "userId": 1,
+    "_debug": "ok, 7 days diet"
+  }
+}
