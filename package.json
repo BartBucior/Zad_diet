@@ -1,0 +1,35 @@
+{
+  "name": "dietly-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier . --check \"!**.ts\"",
+    "lint": "npx eslint . --ext .ts --max-warnings=0",
+    "test": "npx playwright test",
+    "test:headed": "npm run test -- --headed",
+    "test:ui": "npm run test -- --ui",
+    "test:smoky": "npx playwright test --grep @smoky",
+    "show-report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "ajv": "^8.12.0",
+    "dotenv": "^16.4.1",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-playwright": "^0.16.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "genson-js": "^0.0.8",
+    "husky": "^8.0.3",
+    "prettier": "3.0.3"
+  }
+}
