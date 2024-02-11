@@ -6,12 +6,13 @@ import { expect, test } from '@playwright/test';
 const schemaValidator = new JSONSchemaValidator();
 let orders: OrderRequests;
 
-test.describe('Get all orders', () => {
+test.describe('Get order details', () => {
   test.beforeEach(async ({ request }) => {
     orders = new OrderRequests(request);
   });
+  // Its possible here to create an array or use predefined array with ids and use a loop for tests in case to verify more than one id.
 
-  test('should return details for given order @smoky', async () => {
+  test('should return details for given order id @smoky', async () => {
     const res = await orders.getOrderDetailsForGivenOrder('1');
     const resBody = await res.json();
     expect(res.status()).toEqual(200);

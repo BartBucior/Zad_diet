@@ -6,12 +6,12 @@ import { expect, test } from '@playwright/test';
 const schemaValidator = new JSONSchemaValidator();
 let orders: OrderRequests;
 
-test.describe('Get all orders', () => {
+test.describe('Create order', () => {
   test.beforeEach(async ({ request }) => {
     orders = new OrderRequests(request);
   });
 
-  test('should create details for given order @smoky', async () => {
+  test('should create order correctly @smoky', async () => {
     const res = await orders.createOrder(orderData.validBody);
     const resBody = await res.json();
     expect(res.status()).toEqual(201);
@@ -25,7 +25,7 @@ test.describe('Get all orders', () => {
     // await schemaValidator.validateJsonSchema('GET_all_orders', 'orders', res); // this only verify whether the existing schema template is the same as response or not
   });
 
-  test('should return details for given order', async () => {
+  test('should NOT create order (order starts after 30 days)', async () => {
     const res = await orders.createOrder(orderData.startingDateAfter30Days);
     const resBody = await res.json();
     expect(res.status()).toEqual(403); // I made assumption that this is forbidden so schedule should not be created
